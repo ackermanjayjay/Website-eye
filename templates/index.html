@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <style>
+  .my-lst>:hover{
+    cursor: pointer;
+    box-shadow: -15px 10px 8px -2px rgba(0,0,0,0.23);
+  -webkit-box-shadow: -15px 10px 8px -2px rgba(0,0,0,0.23);
+  -moz-box-shadow: -15px 10px 8px -2px rgba(0,0,0,0.23);
+    }
+.my-lst{
+  transition: transform .5s;
+}
+.image-thumbnail{
+  cursor: pointer;
+}
+  </style>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-white navbar-nav shadow ">
+      <div class="container mx-5 my-2  ">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('prediction')}}">Prediction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Team</a>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-5">    
+    <h2>{{nama}}</h2>
+    <p>Prediksi menggunakan poto konjungtiva mata</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis non quasi adipisci. Voluptate repellendus doloremque sequi deserunt minus mollitia aperiam a consequuntur. Pariatur alias nobis eos culpa natus architecto!</p>
+    </div>
+    <!-- Untuk Gambar kontent -->
+    <!-- <div class="container justify-content-start d-flex flex-row my-lst mb-3 ">
+      <div class="card"  style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="Use Data Eye ">
+      <div class="card-body">
+        <p class="card-text"> <a class="text-decoration-none link-unstyled text-dark" href="{{url_for('prediction')}}"> ipsum dolor sit amet consectetur adipisicing elit. Nostrum natus quisquam asperiores fugit reprehenderit sequi</a></p>
+      </div>
+    </div>
+    <div class="card"  style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="blabala">
+    <div class="card-body">
+      <p class="card-text"> <a class="text-decoration-none link-unstyled text-dark" href="{{url_for('prediction')}}"> ipsum dolor sit amet consectetur adipisicing elit. Nostrum natus quisquam asperiores fugit reprehenderit sequi</a></p>
+    </div>
+  </div>
+    </div> -->
+
+    <div class="container justify-content-start d-flex flex-row mb-5 p-3 image-thumbnail">
+      <img src="{{url_for('static',filename='assets/tf.png')}}" class=" img-fluid rounded-circle" style="width: 15rem;" alt="eye">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
