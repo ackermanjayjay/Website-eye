@@ -19,6 +19,14 @@
 .image-thumbnail{
   cursor: pointer;
 }
+.zoom{
+  transition: transform .2s;
+}
+.zoom:hover{
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.1); 
+}
   </style>
 
   <body>
@@ -109,8 +117,8 @@
 </div>
 
   <h4 class="container mt-5">Obat</h4>
-  <div class="container row row-cols-1 row-cols-md-2 g-4">
-    <div class="col">
+  <div class="container row row-cols-1 row-cols-md-2 g-4 mx-5 ">
+    <div class="col zoom">
       <div class="card">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
@@ -119,7 +127,7 @@
         </div>
       </div>
     </div>
-    <div class="col">
+    <div class="col zoom">
       <div class="card">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
@@ -128,7 +136,7 @@
         </div>
       </div>
     </div>
-    <div class="col">
+    <div class="col zoom">
       <div class="card">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
