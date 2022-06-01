@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{title}}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+ 
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/home.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/font.css')}}">
+
+
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+    <nav class="container navbar navbar-expand-lg bg-white navbar-nav">
       <div class="container mx-5 my-2  ">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,56 +31,111 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Team</a>
             </li>
-           
+        
           </ul>
         </div>
       </div>
     </nav>
-    <div class="container mt-5">    
+    <div class="bg-dark text-white p-3">
+     <div class="justify-content-around rounded-0" >    
+     <h2>{{nama}}</h2>
+     <h4><p>Anemia</p></h4>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis non quasi adipisci. Voluptate repellendus doloremque sequi deserunt minus mollitia aperiam a consequuntur. Pariatur alias nobis eos culpa natus architecto! Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem vel error magnam optio aliquam suscipit ipsa in ipsum laudantium. Alias vel voluptates illo quaerat enim architecto nam omnis non exercitationem.</p>
+     </div>
+   </div>
+ 
+    <div class="container mt-5 shadow-lg">    
     <h2>{{nama}}</h2>
-    <p>Adalah kondisi ketika tubuh kekurangan sel darah merah yang sehat atau ketika sel darah merah tidak berfungsi dengan baik. Akibatnya, organ tubuh tidak mendapat cukup oksigen sehingga membuat penderita anemia pucat dan mudah lelah.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae necessitatibus quasi quibusdam nam ad qui blanditiis ipsam sed. Voluptatibus repellendus maxime delectus at consequuntur sed ipsum in vero ad vitae.</p>
     </div>
+
+       <!-- Kontent -->
+        <!-- Untuk Gambar kontent -->
+        <!-- Menjelaskan tentang Bisa terkena anemia -->
+        <div class="border-0">
+        <div class="container justify-content-around gap-4 p-3 ">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas soluta saepe veritatis sit debitis tenetur incidunt dolorem mollitia deleniti eos dicta sequi non impedit, quo laboriosam assumenda perferendis nulla id.</p>
+        </div>
+        <div class=" justify-content-around d-flex flex-row   mb-3 gap-4 p-3 ">
+        <div class="card "  style="width: 18rem;">
+          <img src="{{url_for('static',filename='assets/tutorial/tutor4.PNG')}}" class="card-img-top zoom my-lst" alt="blabala">
+        <div class="card-body">
+          <p class="card-text text-dark">  Menggunakan Data mata yang sudah dilakukan berbagai proses</p>
+        </div>
+      </div>
+        <div class="card"  style="width: 18rem;">
+          <img src="{{url_for('static',filename='assets/tutorial/tutor4.PNG')}}" class="card-img-top zoom my-lst" alt="blabala">
+        <div class="card-body">
+          <p class="card-text"> <a class="text-decoration-none link-unstyled text-dark"> Menggunakan Data mata yang sudah dilakukan berbagai proses</a></p>
+        </div>
+      </div>
+        </div> 
+      </div>
+    
+  
+
+<div class="container">
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+    Cara melakukan Prediksi mata Anda
+  </button>
+
+<div style="min-height: 120px;">
+  <div class="collapse collapse-horizontal" id="collapseWidthExample">
+    <div class="card card-body" style="width: 900px;">
+      Tutorial 
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active ">
+            <img src="{{url_for('static',filename='assets/tutorial/tutorial.PNG')}}" class="d-block w-100" alt="tutor">
+          </div>
+         
+          <div class="carousel-item ">
+            <img src="{{url_for('static',filename='assets/tutorial/tutorial2.PNG')}}" class="d-block w-100" alt="tutor">
+            <p>Masukkan Gambar anda </p>
+          </div>
+         
+          <div class="carousel-item ">
+            <img src="{{url_for('static',filename='assets/tutorial/tutor4.png')}}"class="d-block w-100" alt="tutor">
+            <p>Gambar yang anda harus masukkan </p>
+          </div>
+
+          <div class="carousel-item ">
+            <img src="{{url_for('static',filename='assets/tutorial/tutorial3.PNG')}}"class="d-block w-100" alt="tutor">
+            <p>Silahkan anda tekan submit </p>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Kontent untuk prediksi mata -->
     <div class="container mt-5 ">
-      <div class="row d-flex justify-content-center align-items-center">
           <div class="col-md-7">
               <div class="card bg-light">
                   <div class="card-header ">
-                      <h3 class="card-title mt-2">Prediksi Anemia</h3>
+                      <h3 class="card-title mt-2">Prediksi Mata </h3>
                     </div>
                   <div class="card-body">
                       <form method="POST" action="/prediction"
                         enctype = "multipart/form-data">
-
-                          <div class="row mt-4">
-                              <div class="col-md-5">
-                                <div class="row">
-                                  </div>
-                                    <h5 style="font-family:Arial, Helvetica, sans-serif">Jenis Kelamin</h5>
-                                    <div class="form-check">
-                                      <input class="form-check-input" type="radio" name="gender" id="Pria" value=1>
-                                      <label class="form-check-label" style="font-family:Arial, Helvetica, sans-serif" for="priaRadios">Pria</label>
-                                    </div>
-                                    <div class="form-check">
-                                      <input class="form-check-input" type="radio" name="gender" id="Wanita" value=0 >
-                                      <label class="form-check-label" style="font-family:Arial, Helvetica, sans-serif" for="wanitaRadios">Wanita</label>
-                                    </div>
-                                    <div class="row mt-4">
-                                      <h5 style="font-family:Arial, Helvetica, sans-serif">Masukkan Gambar</h5>
-                                      <input type="file"  name="file" class="form-control-file" id="Conjuntiva_Palpebral" value="Upload">
-                                    </div>
-                              </div>
-                                
-                              <div class="col-md-7">
-                                  <h6 style="font-family:Arial, Helvetica, sans-serif">*Contoh gambar yang sesuai:</h6>
-                                  <img src="conjunctiva palpebral.jpg" class="img-fluid" alt="Conjuntiva Palpebral">
-                              </div>
-                          </div>
+                        <label class="form-label" for="customFile">Masukkan Gambar mata anda</label>
+                        <input type="file" name="file" class="form-control" id="file" value="Upload" required />
                           <div class="row py-4 ">
                               <div class="d-grid gap-2 col-md-5 mx-auto">
-                                  <input type="submit" class="btn btn-primary">
+                                  <input type="submit" class="btn btn-primary" required>
                                 </div>
                               <div class="col">
-                                  <h3 class="result">{{palpeb}}</h3>
+                                  <h3 class="result">Hasil Prediksi ={{palpeb}}</h3>
                               </div>
                           </div>
                       </form>
@@ -82,6 +144,11 @@
   </div>   
   </div>
 
+
+  
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+   
+
   </body>
 </html>
