@@ -1,4 +1,5 @@
 from distutils.log import debug
+from enum import auto
 import os
 import numpy as np
 import pandas as pd
@@ -9,12 +10,22 @@ from tensorflow.keras.preprocessing import image
 from flask import Flask, render_template, request
 from tensorflow.keras.preprocessing.image import load_img
 from tensorflow.keras.preprocessing.image import img_to_array
+import cv2 as cv
 
 app = Flask(__name__)
 
 @app.route('/', methods = ['GET'])
 def index():
-	return render_template('index.html')
+	title="Halaman Home"
+	kontent="Anemia"
+	return render_template('index.html',title=title,kontent=kontent)
+
+# Fitur Auto Crop
+def auto_crop(crop):
+	cropped_image = crop[50:200, 180:200]
+	crop_resize=cv.resize(cropped_image,(256,256))
+	return crop_resize
+
 
 def take_model():
 	try:
@@ -28,6 +39,7 @@ def load_img(img_p):
 		
 	img = image.load_img(img_p, target_size=(256, 256))
 	x = image.img_to_array(img)
+	x=auto_crop(x)
 	x = np.expand_dims(x,0)
 	x=np.vstack([x])
 	return x
@@ -47,7 +59,9 @@ take_model()
 
 @app.route('/prediction', methods = ['GET'])
 def prediction():
-	return render_template('prediksi.html'
+	title="Halaman Prediksi"
+	kontent="Anemia"
+	return render_template('prediksi.html',title=title,kontent=kontent
 	)
 
 @app.route('/prediction', methods = ['GET', 'POST'])
@@ -55,12 +69,15 @@ def upload_file():
 		if request.method == 'POST':
 			file = request.files['file']
 			filename = file.filename
-			file_path = os.path.join(r'static/', filename)                       #slashes should be handeled properly
+			file_path = os.path.join(r'static/prediksi/', filename)                    
 			file.save(file_path)
 			print(filename)
 			product = predict_img(file_path)
 			print(product)
 			return render_template('prediksi.html',palpeb=product)
+		else :
+			masukkan_gambar="Masukkan gambar anda terlebih dahulu"
+			return render_template('prediksi.html',peringatan=masukkan_gambar)	
 
 
     
