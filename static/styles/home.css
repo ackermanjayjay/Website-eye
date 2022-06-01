@@ -1,0 +1,21 @@
+.my-lst>:hover{
+    cursor: pointer;
+    box-shadow: -15px 10px 8px -2px rgba(0,0,0,0.23);
+  -webkit-box-shadow: -15px 10px 8px -2px rgba(0,0,0,0.23);
+  -moz-box-shadow: -15px 10px 8px -2px rgba(0,0,0,0.23);
+    }
+html{
+  scroll-behavior: smooth;
+}    
+.my-lst{
+  transition: transform .5s;
+}
+
+.zoom{
+  transition: transform .2s;
+}
+.zoom:hover{
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.1); 
+}
