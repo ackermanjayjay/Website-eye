@@ -18,13 +18,33 @@ app = Flask(__name__)
 def index():
 	title="Halaman Home"
 	kontent="Anemia"
-	return render_template('index.html',title=title,kontent=kontent)
+	tim_pertama="Muhammad Reza"
+	tim_kedua="Fahmi Yusron Fiddin"
+	tim_ketiga="Ni Wayan Erna"
+	tim_kempat="Helsa"
+	tim_kelima="Elva"
+	return render_template('index.html',title=title,kontent=kontent,
+	tim_pertama=tim_pertama,
+	tim_kedua=tim_kedua,
+	tim_ketiga=tim_ketiga,
+	tim_kempat=tim_kempat,
+	tim_kelima=tim_kelima)
+
+
+
 
 # Fitur Auto Crop
 def auto_crop(crop):
 	cropped_image = crop[50:200, 180:200]
 	crop_resize=cv.resize(cropped_image,(256,256))
 	return crop_resize
+
+# Fitur autocrop_untuk_diliaht user
+def auto_crop_user(img_usr_crp):
+	img = image.load_img(img_usr_crp,target_size=(256, 256))
+	x = image.img_to_array(img)
+	cropped_image = x[50:200, 180:200]	
+	return cropped_image
 
 
 def take_model():
@@ -60,24 +80,62 @@ take_model()
 @app.route('/prediction', methods = ['GET'])
 def prediction():
 	title="Halaman Prediksi"
-	kontent="Anemia"
-	return render_template('prediksi.html',title=title,kontent=kontent
-	)
+	kontent="Teknologi"
+	tim_pertama="Muhammad Reza"
+	tim_kedua="Fahmi Yusron Fiddin"
+	tim_ketiga="Ni Wayan Erna"
+	tim_kempat="Helsa"
+	tim_kelima="Elva"
+	return render_template('prediksi.html',title=title,kontent=kontent,
+	tim_pertama=tim_pertama,
+	tim_kedua=tim_kedua,
+	tim_ketiga=tim_ketiga,
+	tim_kempat=tim_kempat,
+	tim_kelima=tim_kelima)
+
+@app.route('/predikReady',methods=['GET'])
+def ready_pred():
+	title="Halaman Prediksi"
+	return render_template('prediksi_2.html',title=title)
+
 
 @app.route('/prediction', methods = ['GET', 'POST'])
 def upload_file():
-		if request.method == 'POST':
-			file = request.files['file']
-			filename = file.filename
-			file_path = os.path.join(r'static/prediksi/', filename)                    
-			file.save(file_path)
-			print(filename)
-			product = predict_img(file_path)
-			print(product)
-			return render_template('prediksi.html',palpeb=product)
-		else :
-			masukkan_gambar="Masukkan gambar anda terlebih dahulu"
-			return render_template('prediksi.html',peringatan=masukkan_gambar)	
+		if request.method == 'POST':  # Jika user post maka
+			file = request.files['file'] # jika user memasukkan file gambar 
+			filename = file.filename  
+			file_path = os.path.join(r'static/prediksi/', filename) # maka disimpan k folder static/prediksi/ sesuai dengan nama file tersebut                    
+			file.save(file_path)  #serta disimpan ke file_path
+			print(filename)   #menampilkan nama upload user di konsole
+			product = predict_img(file_path)  # Lakukan prediksi upload user yang sudah disimpan
+			print(product)   # Hasil prediksi keluar di output untuk di konsole
+
+
+			#  Bagaimana cara membuat gambar user yang di auto agar disimpan di static/crop ?
+			file_name_crop=file.filename
+			file_crop=os.path.join(r'static/crop/',file_name_crop)
+			try:
+				file.save(file_crop)
+				save=auto_crop_user(file_crop)
+				file.save(save)
+			except Exception as e :
+				print(e)	
+
+				# Untuk Melempara nama ke front end
+			title="Halaman Prediksi"
+			kontent="Teknologi"
+			tim_pertama="Muhammad Reza"
+			tim_kedua="Fahmi Yusron Fiddin"
+			tim_ketiga="Ni Wayan Erna"
+			tim_kempat="Helsa"
+			tim_kelima="Elva"	
+			return render_template('prediksi_2.html',palpeb=product,user_img=file_path,title=title,kontent=kontent,
+	tim_pertama=tim_pertama,
+	tim_kedua=tim_kedua,
+	tim_ketiga=tim_ketiga,
+	tim_kempat=tim_kempat,
+	tim_kelima=tim_kelima) 
+		
 
 
     
