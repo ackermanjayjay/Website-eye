@@ -1,7 +1,9 @@
 <h1 align="center">Hi 👋, We are KS Eye</h1>
-<img src="/static/orbit.jpg" align="center">
-<img src="/static/kampus_merdeka.jpg" style="1rem;" align="center">
-<h3 align="center">MSIB Final Project in Orbit Future Academy</h3>
+<h3 align="center" >MSIB Final Project in Orbit Future Academy</h3>
+
+<img src="/static/kampus_merdeka.jpg"  align="right" width="300" height="250">
+<img src="/static/orbit.jpg" align="center"  width="300" height="250">
+<br>
 
 - 📄 Use Tensorflow
 - 📄 Use OpenCV
