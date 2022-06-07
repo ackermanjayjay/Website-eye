@@ -1,4 +1,5 @@
 <h1 align="center">Hi 👋, We are KS Eye</h1>
+<img src="/static/orbit.jpg" align="center">
 <h3 align="center">MSIB Final Project in Orbit Future Academy</h3>
 
 - 📄 Use Tensorflow
