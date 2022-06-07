@@ -10,6 +10,13 @@
 - 📄 Use Numpy 
 - 📄 Use Flask `for deployment web app`
 
+## Team KsEye
+
+**Muhammad Reza**
+**Helsani Amelia**
+**Fahmi Yusron Fiddin**
+**Ni Wayan Ernawati**
+**Elva Amalia**
 
 
 <h3 align="left">Languages and Tools:</h3>
