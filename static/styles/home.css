@@ -6,6 +6,9 @@
     }
 html{
   scroll-behavior: smooth;
+}
+body{
+  background-color: whitesmoke;
 }    
 .my-lst{
   transition: transform .5s;
