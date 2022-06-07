@@ -8,17 +8,31 @@
   </head>
   <body>
     {% if user_img is not defined %}
-    <div class="mt-5 mx-5 progress">
+    <div class="mt-3 mx-5 progress">
         <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
       </div>
       {% endif %}
 
-    {% if user_img is  defined %}
-    <div class="mt-5 mx-5 progress">
-        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+      {% if user_img is not defined %}
+      <div class="alert alert-danger alert-dismissible fade show my-5 mx-5 text-center" role="alert">
+        <strong>Silahkan input mata anda</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
-      {% endif %}
+        {% endif %}
 
+        
+        {% if user_img is  defined %}
+        <div class="mt-3 mx-5 progress">
+            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+        </div>
+        {% endif %}
+        
+        {% if user_img is  defined %}
+        <div class="alert alert-success alert-dismissible fade show my-5 mx-5 text-center" role="alert">
+          <strong>Hasil Prediksi mata anda</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+          {% endif %}
        <!-- Kontent untuk prediksi mata -->
     <div class="mx-5 container mt-5 justify-content-around ">
           <div class="col-md-7">
@@ -42,6 +56,7 @@
 
     <div class="container mx-5 mt-5">    
         {% if user_img is defined %}
+        
         <h1 class="container mx-5">Hasil Prediksi = {{palpeb}}</h1>
         </div>
         {% endif %}
