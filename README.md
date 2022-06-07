@@ -5,9 +5,11 @@
 <img src="/static/orbit.jpg" align="center"  width="300" height="250">
 <br>
 
-- 📄 Use Tensorflow
-- 📄 Use OpenCV
-- 📄 Use Numpy
+- 📄 Use Tensorflow `for load model`
+- 📄 Use OpenCV `for load image`
+- 📄 Use Numpy 
+- 📄 Use Flask `for deployment web app`
+
 
 
 <h3 align="left">Languages and Tools:</h3>
