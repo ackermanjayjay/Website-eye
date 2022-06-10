@@ -3,200 +3,164 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{title}}</title>
+    <title>KsEye</title>
+    
     <!-- Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/home.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/font.css')}}">
-    <!-- Tailwinds -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Icon -->
+    <link rel="shortcut icon" href="{{ url_for('static',filename='icon/low-vision-solid-24.png') }}" type="image/x-icon">
+
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- CSS style font -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   </head>
   <body>
-    <div class="container">
-    <nav class="container navbar navbar-expand-lg bg-white navbar-nav">
-      <div class="container mx-5 my-2  ">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url_for('prediction')}}">Prediction</a>
-            </li>  
-          </ul>
-        </div>
-      </div>
-      </div>
-    </nav>
-
-    <!-- Kontent -->
-    <div class="container bg-dark text-white p-3">
-    <div class="justify-content-around rounded-bottom" >    
-    <div class="p-3">
-    <h4><p>{{kontent}}</p></h4>
-    </div>
-      <p>Anemia merupakan penyakit yang dapat dialami oleh tubuh manusia dimana kadar hemoglobin pada darah lebih rendah dari batas normal</p>
-      <p>Seseorang dikatakan terkena anemia jika kadar hemoglobin pada darah lebih rendah dari batas normal. Peran hemoglobin dalam darah sangat penting. Hemoglobin adalah protein kaya zat besi yang memberikan warna merah pada darah. Protein ini akan membantu sel-sel darah merah membawa oksigen (O2) dari paru-paru ke seluruh tubuh dan membawa kembali karbon dioksida (H2O) ke paru-paru. </p>
-    </div>
-  </div>
-
-    <!-- Untuk Gambar kontent -->
-    <!-- Menjelaskan tentang Bisa terkena anemia -->
-      <div class="container justify-content-center mt-5  gap-4 p-3 shadow  ">
-      <h4>Penyebab Anemia</h4>
-    </div>
-
-    <div class=" justify-content-around d-flex flex-row mb-3 gap-4 p-3 ">
-    <div class="card "  style="width: 18rem;">
-      <img src="{{url_for('static',filename='assets/tutorial/obat.png')}}" class="card-img-top zoom my-lst" alt="blabala">
-    <div class="card-body">
-      <p class="card-text text-dark">Konsumsi obat-obatan tertentu</p>
-      <p class="card-text">
-        </p>
-    </div>
-  </div>
-    <div class="card "  style="width: 18rem; ">
-      <img src="{{url_for('static',filename='assets/tutorial/gizi.png')}}" class="card-img-top zoom my-lst" alt="blabala">
-    <div class="card-body">
-      <p class="card-text text-dark">Kurangnya asupan gizi</p>
-    </div>
-  </div>
-    <div class="card "  style="width: 15rem; ">
-      <img src="{{url_for('static',filename='assets/tutorial/hemo.png')}}" class="card-img-top zoom my-lst" alt="blabala">
-    <div class="card-body">
-      <p class="card-text text-dark">Kurangnya hemoglobin</p>
-    </div>
-  </div>
-    </div> 
-  
-
-
-<div class="mt-5 container bg-dark text-bg-dark">
-    <div class="justify-content-around row row-cols-1 row-cols-md-2 g-4 mx-5 ">
-      <h4 class="container shadow justify-content-center mt-3  gap-4 p-3 shadow ">Gejala Anemia</h4>
-    <div class="card bg-dark text-bg-dark"  style="width: 18rem;">
-      <img src="{{url_for('static',filename='assets/tutorial/lelah.png')}}" class="img-fluid zoom " alt="..."  style="width:  15rem; max-width: 500px;">
-      <div class="card-body">
-        <h5 class="card-title">Lemah dan Letih</h5>
-        </p>
-    </div>
-  </div>
-    <div class="card bg-dark text-bg-dark "style="width: 18rem;" >
-      <img src="{{url_for('static',filename='assets/tutorial/pusing.png')}}" class="img-fluid zoom " alt="..."   style="width:  15rem; max-width: 500px;">
-      <div class="card-body">
-        <h5 class="mx-5 card-title">Sakit kepala</h5>
-        </p>
-    </div>
-  </div>
-    <div class="card bg-dark text-bg-dark "style="width: 18rem;" >
-      <img src="{{url_for('static',filename='assets/tutorial/lupa.png')}}" class="img-fluid zoom " alt="..."   style="width:  15rem; max-width: 500px;">
-      <div class="card-body">
-        <h5 class="mx-5 card-title">Cepat lupa</h5>
-        </p>
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-   
-    
-
-<!-- Menjelaskakn solusi agar tidak terkena anemia -->
-<div class="mt-5 justify-content-around row row-cols-1 row-cols-md-2 g-4 mx-5">
-    <h4 class="container shadow justify-content-center mt-3  gap-4 p-3 shadow  ">Pencegahan anemia</h4>
-    <div class="col my-lst  zoom">
-      <div class="card  ">
-        <img src="{{url_for('static',filename='assets/tutorial/kopi.png')}}" class=" container  rounded-circle" style="width:  10rem; max-width: 540px;"  alt="eye">
-        <div class="card-body">
-          <h5 class="card-title">Hindari Kaefin berlebih</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col my-lst  zoom">
-      <div class="card">
-        <img src="{{url_for('static',filename='assets/tutorial/gizi.png')}}" class=" container  rounded-circle" style="width:  20rem; max-width: 540px;"  alt="eye">        <div class="card-body">
-          <h5 class="card-title">Makan-makanan bergizi</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col my-lst  zoom">
-      <div class="card">
-        <img src="{{url_for('static',filename='assets/tutorial/vitc.png')}}" class=" container  rounded-circle" style="width:  15rem; max-width: 540px;"  alt="eye">        <div class="card-body">
-          <h5 class="card-title">Konsumsi Vitamin C</h5>
-        </div>
-      </div>
-  </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="mt-5 text-center text-lg-start bg-light  bg-dark text-bg-dark ">
-    <div class="border border-dark">
-  <!-- Section: Links  -->
-  <section class="#">
-    <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
-      <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Proyek Akhir
-          </h6>
-          <p>
-            Klasifikasi Palpebral Dengan CNN
-          </p>
-          <div class="p-3">
-            <p>
-              EyeAnemia
-            </p>
+    <nav class="container navbar navbar-expand-lg bg-light shadow">
+        <div class="mx-5 container">
+          <a class="navbar-brand" href="#">
+              <img src="{{ url_for('static',filename='navbar_styles/python.svg') }}" alt="">
+              <span>KsEye</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('prediksi') }}">Prediksi</a>
+              </li>
+            </div>
           </div>
         </div>
-        <!-- Grid column -->
+      </nav>
 
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Team
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">{{tim_pertama}}</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">{{tim_kedua}}</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">{{tim_ketiga}}</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">{{tim_kempat}}</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">{{tim_kelima}}</a>
-          </p>
-        </div>
-        <!-- Grid column -->
+
+      
+    
+      <div class="mt-3 container" >
+      <img src="{{ url_for('static',filename='navbar_styles/orbit.png') }}" alt="orbit" class="align-text-top animate__animated animate__fadeIn " width="200">
+      <img src="{{ url_for('static',filename='navbar_styles/kampus_merdeka.png') }}" alt="merdeka"  align="right" class="animate__animated animate__fadeIn" width="200" >
       </div>
-      <!-- Grid row -->
-    </div>
-  </section>
-  <!-- Section: Links  -->
-  <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2022 Copyright:
-    <a class="text-reset fw-bold" href="#">KSEye</a>
-  </div>
-  <!-- Copyright -->
-</div>
+      </div>
+     
+    <!-- Konten perkenalan -->
+      <div class="mt-5 jumbotron  py-5 ">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                        <h1 class="display-1 lh-1 mb-3">Eye Anemia</h1>
+                        <p class="lead fw-normal text-muted mb-5 text-whi">Adalah Aplikasi yang dikembangkan oleh tim KS Eye untuk mendeteksi anemia atau tidak anemia menggunakan mata </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="jumbotron">
+                        <div class="container ">
+                                  <img src="{{ url_for('static',filename='images/Ks_Eye.png') }}" alt="logo tim" class="shadow-lg rounded-circle" width="300"  >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+ 
+     
+        <!-- Teknologi-->
+        <div class="mt-5 container">
+        <section >
+          <div class="shadow">
+              <div class="text-center">
+                  <h2 class="section-heading text-uppercase">Teknologi  </h2>
+              </div>
+              <div class="row text-center">
+                  <div class="col-md-4">
+                      <span class="fa-stack fa-4x">
+                        <img src="{{url_for('static',filename='icon/TensorFlow_Brand_Assets/TensorFlow_Logo/Primary/SVG/FullColorPrimary_Icon.svg')}}" alt="logo tim" class="animate__animated animate__fadeInDown shadow-lg rounded-circle" width="200" >
+                      </span>
+                      <h4 class="my-3">Modelling </h4>
+                      <p class="text-muted ">TensorFlow adalah platform open source ujung ke ujung untuk pembelajaran mesin. Termasuk dapat menjalankan Neural Network</p>
+                  </div>
+                  <div class="col-md-4">
+                      <span class="fa-stack fa-4x">
+                        <img src="{{ url_for('static',filename='icon/bxl-bootstrap.svg') }}" alt="logo tim" class="animate__animated animate__fadeInDown" width="200" >
+                      </span>
+                      <h4 class="my-3">Responsive Design</h4>
+                      <p class="text-muted">Boostrap Framework CSS</p>
+                  </div>
+                  <div class="col-md-4">
+                      <span class="fa-stack fa-4x">
+                        <img src="{{url_for('static',filename='images/CNN.PNG')}}" alt="logo Library" class="animate__animated animate__fadeInDown shadow-lg " width="400" >
+                      </span>
+                      <h4 class="my-3">Neural Network</h4>
+                      <p class="text-muted">Algoritma Deep Learning yang dapat mengambil gambar input, menetapkan kepentingan (bobot dan bias yang dapat dipelajari) untuk berbagai aspek/objek dalam gambar dan dapat membedakan satu dari yang lain.</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+
+       <!-- Team-->
+       <section class="py-5" id="features">
+        <div class="container px-5 my-5">
+            <div class="row gx-5">
+                <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Team & Contribute</h2></div>
+                <div class="col-lg-8">
+                    <div class="row gx-5 row-cols-1 row-cols-md-2">
+                        <div class="col mb-5 h-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+                            <h2 class="h5">Muhammad Reza</h2>
+                            <p class="mb-0">Modelling CNN </p>
+                            <p class="mb-0">Deployment back end & front end </p>
+                        </div>
+                        <div class="col mb-5 h-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+                            <h2 class="h5">Fahmi Yusron Fiddin</h2>
+                            <p class="mb-0">Deployment Front end</p>
+                        </div>
+                        <div class="col mb-5 h-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+                            <h2 class="h5">Ni Wayan Ernawati</h2>
+                            <p class="mb-0">Pre-Processing data </p>
+                            <p class="mb-0">Pelabelan data </p>
+                        </div>
+                        <div class="col mb-5 mb-md-0 h-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+                            <h2 class="h5">Helsani Amelia</h2>
+                            <p class="mb-0">Pre-Processing data </p>
+                            <p class="mb-0">Pelabelan data </p>
+                        </div>
+                        <div class="col h-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+                            <h2 class="h5">Elva Amalia</h2>
+                            <p class="mb-0">Pre-Processing data </p>
+                            <p class="mb-0">Pelabelan data </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer-->
+<footer class="py-4 bg-dark">
+  <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Ks Eye 2022</p></div>
 </footer>
-<!-- Footer -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+   
+     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
