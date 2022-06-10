@@ -1,6 +1,4 @@
-from distutils.log import debug
-from enum import auto
-import os
+from flask import *
 import numpy as np
 import pandas as pd
 from PIL import Image
@@ -11,25 +9,9 @@ from flask import Flask, render_template, request
 from tensorflow.keras.preprocessing.image import load_img
 from tensorflow.keras.preprocessing.image import img_to_array
 import cv2 as cv
+import os
 
 app = Flask(__name__)
-
-@app.route('/', methods = ['GET'])
-def index():
-	title="Halaman Home"
-	kontent="Anemia"
-	tim_pertama="Muhammad Reza"
-	tim_kedua="Fahmi Yusron Fiddin"
-	tim_ketiga="Ni Wayan Erna"
-	tim_kempat="Helsa"
-	tim_kelima="Elva"
-	return render_template('index.html',title=title,kontent=kontent,
-	tim_pertama=tim_pertama,
-	tim_kedua=tim_kedua,
-	tim_ketiga=tim_ketiga,
-	tim_kempat=tim_kempat,
-	tim_kelima=tim_kelima)
-
 
 
 
@@ -39,14 +21,7 @@ def auto_crop(crop):
 	crop_resize=cv.resize(cropped_image,(256,256))
 	return crop_resize
 
-# Fitur autocrop_untuk_diliaht user
-def auto_crop_user(img_usr_crp):
-	img = image.load_img(img_usr_crp,target_size=(256, 256))
-	x = image.img_to_array(img)
-	cropped_image = x[50:200, 180:200]	
-	return cropped_image
-
-
+    
 def take_model():
 	try:
 		global model
@@ -54,6 +29,7 @@ def take_model():
 		print("Load model success !!")
 	except Exception as e:
 		print(e)
+
 
 def load_img(img_p):
 		
@@ -63,7 +39,7 @@ def load_img(img_p):
 	x = np.expand_dims(x,0)
 	x=np.vstack([x])
 	return x
-	
+
 def predict_img(img_):
 	new_image = load_img(img_)
 	classes = model.predict(new_image, batch_size=10)
@@ -75,29 +51,15 @@ def predict_img(img_):
 	return hasil	 
 
 take_model()
-		
 
-@app.route('/prediction', methods = ['GET'])
-def prediction():
-	title="Halaman Prediksi"
-	kontent="Teknologi"
-	tim_pertama="Muhammad Reza"
-	tim_kedua="Fahmi Yusron Fiddin"
-	tim_ketiga="Ni Wayan Erna"
-	tim_kempat="Helsa"
-	tim_kelima="Elva"
-	return render_template('prediksi.html',title=title,kontent=kontent,
-	tim_pertama=tim_pertama,
-	tim_kedua=tim_kedua,
-	tim_ketiga=tim_ketiga,
-	tim_kempat=tim_kempat,
-	tim_kelima=tim_kelima)
+@app.route("/")
+def index():
+    return render_template('index.html')
 
-@app.route('/predikReady',methods=['GET'])
-def ready_pred():
-	title="Halaman Prediksi"
-	return render_template('prediksi_2.html',title=title)
-
+@app.route("/prediksi")
+def prediksi():
+    return render_template('prediksi.html')
+    
 
 @app.route('/prediction', methods = ['GET', 'POST'])
 def upload_file():
@@ -111,17 +73,17 @@ def upload_file():
 			print(product)   # Hasil prediksi keluar di output untuk di konsole
 
 
-			#  Bagaimana cara membuat gambar user yang di auto agar disimpan di static/crop ?
-			file_name_crop=file.filename
-			file_crop=os.path.join(r'static/crop/',file_name_crop)
-			try:
-				file.save(file_crop)
-				save=auto_crop_user(file_crop)
-				file.save(save)
-			except Exception as e :
-				print(e)	
+			# #  Bagaimana cara membuat gambar user yang di auto agar disimpan di static/crop ?
+			# file_name_crop=file.filename
+			# file_crop=os.path.join(r'static/crop/',file_name_crop)
+			# try:
+			# 	file.save(file_crop)
+			# 	save=auto_crop_user(file_crop)
+			# 	file.save(save)
+			# except Exception as e :
+			# 	print(e)	
 
-				# Untuk Melempara nama ke front end
+				# Untuk Melempar nama ke front end
 			title="Halaman Prediksi"
 			kontent="Teknologi"
 			tim_pertama="Muhammad Reza"
@@ -129,15 +91,12 @@ def upload_file():
 			tim_ketiga="Ni Wayan Erna"
 			tim_kempat="Helsa"
 			tim_kelima="Elva"	
-			return render_template('prediksi_2.html',palpeb=product,user_img=file_path,title=title,kontent=kontent,
+			return render_template('prediksi.html',palpeb=product,user_img=file_path,title=title,kontent=kontent,
 	tim_pertama=tim_pertama,
 	tim_kedua=tim_kedua,
 	tim_ketiga=tim_ketiga,
 	tim_kempat=tim_kempat,
 	tim_kelima=tim_kelima) 
-		
 
-
-    
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
