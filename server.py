@@ -71,32 +71,9 @@ def upload_file():
 			print(filename)   #menampilkan nama upload user di konsole
 			product = predict_img(file_path)  # Lakukan prediksi upload user yang sudah disimpan
 			print(product)   # Hasil prediksi keluar di output untuk di konsole
-
-
-			# #  Bagaimana cara membuat gambar user yang di auto agar disimpan di static/crop ?
-			# file_name_crop=file.filename
-			# file_crop=os.path.join(r'static/crop/',file_name_crop)
-			# try:
-			# 	file.save(file_crop)
-			# 	save=auto_crop_user(file_crop)
-			# 	file.save(save)
-			# except Exception as e :
-			# 	print(e)	
-
-				# Untuk Melempar nama ke front end
-			title="Halaman Prediksi"
-			kontent="Teknologi"
-			tim_pertama="Muhammad Reza"
-			tim_kedua="Fahmi Yusron Fiddin"
-			tim_ketiga="Ni Wayan Erna"
-			tim_kempat="Helsa"
-			tim_kelima="Elva"	
-			return render_template('prediksi.html',palpeb=product,user_img=file_path,title=title,kontent=kontent,
-	tim_pertama=tim_pertama,
-	tim_kedua=tim_kedua,
-	tim_ketiga=tim_ketiga,
-	tim_kempat=tim_kempat,
-	tim_kelima=tim_kelima) 
+			if product == "Anemia":
+				hasil="Anda terindikasi anemia silahkan pergi ke dokter untuk melakukan pemeriksaan lebih lanjut, atau lakukan pengobatan mandiri dengan cara mengonsumsi makanan mengandung zat besi, vitamin c, vitamin B12, dan asam folat"				
+			return render_template('prediksi.html',palpeb=product,user_img=file_path,penjelasan=hasil) 
 
 if __name__ == "__main__":
     app.run(debug=True)
