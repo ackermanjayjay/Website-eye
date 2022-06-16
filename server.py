@@ -72,7 +72,7 @@ def upload_file():
 			product = predict_img(file_path)  # Lakukan prediksi upload user yang sudah disimpan
 			print(product)   # Hasil prediksi keluar di output untuk di konsole
 			if product == "Anemia":
-				hasil="Anda terindikasi anemia silahkan pergi ke dokter untuk melakukan pemeriksaan lebih lanjut, atau lakukan pengobatan mandiri dengan cara mengonsumsi makanan mengandung zat besi, vitamin c, vitamin B12, dan asam folat"				
+				hasil="Anda terindikasi anemia silahkan pergi ke dokter untuk melakukan pemeriksaan lebih lanjut, serta mengonsumsi makanan mengandung zat besi, vitamin c, vitamin B12, dan asam folat"				
 			return render_template('prediksi.html',palpeb=product,user_img=file_path,penjelasan=hasil) 
 
 if __name__ == "__main__":
